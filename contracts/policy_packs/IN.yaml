@@ -1,0 +1,25 @@
+# Policy Pack - India
+# Regulatory requirements expressed as configuration. Updating a rule here is
+# a versioned config change, not an application release.
+jurisdiction: IN
+name: India (DPDP Act 2023 + RBI FREE-AI)
+references:
+  - "Digital Personal Data Protection Act, 2023 - purpose limitation, data minimisation"
+  - "DPDP Rules, 2025 - consent and breach notification timelines"
+  - "RBI FREE-AI Committee report, 2025 - responsible AI in financial services"
+
+high_risk_use_cases: [decision_support]
+
+# Floors only. A use case may already be stricter; it is never relaxed.
+minimum_modes:
+  pii: standard
+
+high_risk_minimum_modes:
+  pii: strict
+  bias: standard
+
+minimum_actions:
+  high: human_review
+
+force_review_labels: []
+retention_days: 180

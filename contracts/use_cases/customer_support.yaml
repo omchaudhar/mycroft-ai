@@ -1,0 +1,33 @@
+# Evaluation Contract - Customer Support Assistant
+# Customer-facing, synchronous. Tight latency budget, high blast radius:
+# a wrong answer here is a contractual statement to a customer.
+use_case: customer_support
+description: >
+  External-facing support assistant answering policy, order and refund
+  questions from a governed knowledge base.
+risk_level: high
+revision: 1
+latency_budget_ms: 100
+
+requirements:
+  grounding_required: false   # raised to true by the fix loop in the demo
+
+detectors:
+  pii:           {mode: "standard"}   # raised to strict by the EU policy pack
+  hallucination: {mode: "standard"}
+  bias:          {mode: "off"}        # no demographic decisions are made here
+  policy:        {mode: "standard"}
+  behaviour:     {mode: "standard"}
+
+actions:
+  high: block
+  medium: human_review
+  low: log
+
+# All figures are assumptions. Formulas and sources: docs/ASSUMPTIONS.md
+economics:
+  interactions_per_week: 12000
+  rework_cost_per_incident_inr: 14.0
+  handoff_rate: 0.07
+  handoff_cost_inr: 95.0
+  churn_exposure_per_incident_inr: 28.0

@@ -1,0 +1,33 @@
+# Evaluation Contract - Internal Knowledge Assistant
+# Employee-facing copilot over a mix of well-governed and loosely governed
+# internal sources. Lower blast radius, so a more permissive threshold is a
+# deliberate governance choice, not an oversight.
+use_case: internal_knowledge
+description: >
+  Internal copilot answering employee questions over wiki, HR and finance
+  documents of varying governance quality.
+risk_level: medium
+revision: 1
+latency_budget_ms: 250
+
+requirements:
+  grounding_required: true
+
+detectors:
+  pii:           {mode: "standard"}
+  hallucination: {mode: "permissive"} # tolerate more misses to avoid alert fatigue
+  bias:          {mode: "off"}
+  policy:        {mode: "standard"}
+  behaviour:     {mode: "standard"}
+
+actions:
+  high: human_review
+  medium: log
+  low: log
+
+economics:
+  interactions_per_week: 9000
+  rework_cost_per_incident_inr: 9.0
+  handoff_rate: 0.03
+  handoff_cost_inr: 240.0        # an employee's own time, not a support agent's
+  churn_exposure_per_incident_inr: 0.0

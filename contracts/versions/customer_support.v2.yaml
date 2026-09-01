@@ -1,0 +1,49 @@
+use_case: customer_support
+description: 'External-facing support assistant answering policy, order and refund
+  questions from a governed knowledge base.
+
+  '
+jurisdiction: IN
+jurisdiction_name: India (DPDP Act 2023 + RBI FREE-AI)
+risk_level: high
+latency_budget_ms: 100
+revision: 2
+detectors:
+  pii:
+    mode: standard
+    threshold: null
+    source: use_case
+  hallucination:
+    mode: standard
+    threshold: null
+    source: use_case
+  bias:
+    mode: 'off'
+    threshold: null
+    source: use_case
+  policy:
+    mode: standard
+    threshold: null
+    source: use_case
+  behaviour:
+    mode: standard
+    threshold: null
+    source: use_case
+actions:
+  high: block
+  medium: human_review
+  low: log
+force_review_labels: []
+grounding_required: true
+notes: []
+economics:
+  interactions_per_week: 12000
+  rework_cost_per_incident_inr: 14.0
+  handoff_rate: 0.07
+  handoff_cost_inr: 95.0
+  churn_exposure_per_incident_inr: 28.0
+regulatory_references:
+- Digital Personal Data Protection Act, 2023 - purpose limitation, data minimisation
+- DPDP Rules, 2025 - consent and breach notification timelines
+- RBI FREE-AI Committee report, 2025 - responsible AI in financial services
+version: customer_support@r2-5ae442dedc

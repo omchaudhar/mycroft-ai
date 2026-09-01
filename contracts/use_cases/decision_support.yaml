@@ -1,0 +1,32 @@
+# Evaluation Contract - Decision-Support Tool
+# Embedded in a regulated workflow. Output influences a decision about a
+# person, so this is the use case where over-flagging is the cheaper error.
+use_case: decision_support
+description: >
+  Decision-support assistant that recommends outcomes on applications
+  reviewed by a human officer in a regulated workflow.
+risk_level: very_high
+revision: 1
+latency_budget_ms: 400
+
+requirements:
+  grounding_required: true
+
+detectors:
+  pii:           {mode: "strict"}
+  hallucination: {mode: "standard"}  # EU raises this to strict
+  bias:          {mode: "standard"}  # EU raises this to strict
+  policy:        {mode: "standard"}  # US raises this to strict
+  behaviour:     {mode: "standard"}
+
+actions:
+  high: block
+  medium: human_review
+  low: human_review     # in a regulated workflow even weak signals get eyes
+
+economics:
+  interactions_per_week: 2500
+  rework_cost_per_incident_inr: 22.0
+  handoff_rate: 1.0               # every flagged case goes to a human reviewer
+  handoff_cost_inr: 420.0
+  churn_exposure_per_incident_inr: 0.0

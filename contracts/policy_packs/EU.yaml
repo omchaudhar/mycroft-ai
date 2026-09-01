@@ -1,0 +1,26 @@
+# Policy Pack - European Union
+jurisdiction: EU
+name: European Union (GDPR + EU AI Act)
+references:
+  - "GDPR Art. 5 - data minimisation; Art. 22 - automated individual decision-making"
+  - "EU AI Act Art. 6 & Annex III - high-risk AI systems"
+  - "EU AI Act Art. 14 - human oversight obligations"
+
+high_risk_use_cases: [decision_support]
+
+minimum_modes:
+  pii: strict
+
+high_risk_minimum_modes:
+  pii: strict
+  bias: strict
+  hallucination: strict
+
+# Art. 22: a decision with legal or similarly significant effect may not be
+# taken on a purely automated basis.
+minimum_actions:
+  high: block
+  medium: human_review
+
+force_review_labels: [bias]
+retention_days: 30

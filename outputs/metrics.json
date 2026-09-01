@@ -1,0 +1,310 @@
+{
+  "judge_backend": "offline-deterministic",
+  "judge_description": "retrieval similarity over the governed corpus plus numeric agreement; not a language model",
+  "generated": {
+    "n": 264,
+    "counts": {
+      "privacy": {
+        "tp": 45,
+        "fp": 2,
+        "fn": 0,
+        "tn": 217,
+        "precision": 0.9574468085106383,
+        "recall": 1.0,
+        "fp_rate": 0.0091324200913242,
+        "fn_rate": 0.0,
+        "f1": 0.9782608695652174
+      },
+      "hallucination": {
+        "tp": 55,
+        "fp": 2,
+        "fn": 7,
+        "tn": 200,
+        "precision": 0.9649122807017544,
+        "recall": 0.8870967741935484,
+        "fp_rate": 0.009900990099009901,
+        "fn_rate": 0.11290322580645161,
+        "f1": 0.9243697478991597
+      },
+      "bias": {
+        "tp": 16,
+        "fp": 0,
+        "fn": 0,
+        "tn": 64,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "tp": 24,
+        "fp": 6,
+        "fn": 0,
+        "tn": 234,
+        "precision": 0.8,
+        "recall": 1.0,
+        "fp_rate": 0.025,
+        "fn_rate": 0.0,
+        "f1": 0.888888888888889
+      },
+      "behaviour": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "tn": 249,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "f1": 1.0
+      }
+    },
+    "action_mix": {
+      "block": 89,
+      "allow": 121,
+      "log": 12,
+      "human_review": 42
+    }
+  },
+  "holdout": {
+    "n": 30,
+    "counts": {
+      "privacy": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "tn": 24,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "f1": 1.0
+      },
+      "hallucination": {
+        "tp": 6,
+        "fp": 1,
+        "fn": 2,
+        "tn": 21,
+        "precision": 0.8571428571428571,
+        "recall": 0.75,
+        "fp_rate": 0.045454545454545456,
+        "fn_rate": 0.25,
+        "f1": 0.7999999999999999
+      },
+      "bias": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "tn": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "f1": 1.0
+      },
+      "policy": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "tn": 25,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "f1": 1.0
+      },
+      "behaviour": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 30,
+        "precision": null,
+        "recall": null,
+        "fp_rate": 0.0,
+        "fn_rate": null,
+        "f1": null
+      }
+    },
+    "action_mix": {
+      "allow": 14,
+      "human_review": 4,
+      "block": 11,
+      "log": 1
+    }
+  },
+  "latency": {
+    "fast_lane_ms": {
+      "p50": 0.025,
+      "p95": 0.038,
+      "p99": 0.047,
+      "max": 0.326,
+      "mean": 0.028
+    },
+    "slow_lane_ms": {
+      "p50": 0.753,
+      "p95": 1.444,
+      "p99": 1.502,
+      "max": 3.907,
+      "mean": 0.632
+    },
+    "n": 264
+  },
+  "jurisdiction_matrix": {
+    "EU": {
+      "action_mix": {
+        "block": 112,
+        "allow": 121,
+        "log": 7,
+        "human_review": 24
+      },
+      "contracts": {
+        "customer_support": "customer_support@r1-3077516a62",
+        "internal_knowledge": "internal_knowledge@r1-1521a0ed59",
+        "decision_support": "decision_support@r1-9b55fbd515"
+      }
+    },
+    "IN": {
+      "action_mix": {
+        "block": 89,
+        "allow": 121,
+        "log": 12,
+        "human_review": 42
+      },
+      "contracts": {
+        "customer_support": "customer_support@r1-b7cc3c4d4f",
+        "internal_knowledge": "internal_knowledge@r1-6384594ead",
+        "decision_support": "decision_support@r1-15eba44b4b"
+      }
+    },
+    "US": {
+      "action_mix": {
+        "block": 89,
+        "allow": 121,
+        "log": 12,
+        "human_review": 42
+      },
+      "contracts": {
+        "customer_support": "customer_support@r1-40e385a082",
+        "internal_knowledge": "internal_knowledge@r1-dc69b1b762",
+        "decision_support": "decision_support@r1-3866c56d64"
+      }
+    }
+  },
+  "threshold_sweeps": {
+    "customer_support/hallucination": [
+      {
+        "mode": "permissive",
+        "tp": 24,
+        "fp": 2,
+        "fn": 6,
+        "tn": 82,
+        "precision": 0.9230769230769231,
+        "recall": 0.8,
+        "fp_rate": 0.023809523809523808,
+        "fn_rate": 0.2,
+        "blocked_or_reviewed": 60
+      },
+      {
+        "mode": "standard",
+        "tp": 24,
+        "fp": 2,
+        "fn": 6,
+        "tn": 82,
+        "precision": 0.9230769230769231,
+        "recall": 0.8,
+        "fp_rate": 0.023809523809523808,
+        "fn_rate": 0.2,
+        "blocked_or_reviewed": 60
+      },
+      {
+        "mode": "strict",
+        "tp": 24,
+        "fp": 7,
+        "fn": 6,
+        "tn": 77,
+        "precision": 0.7741935483870968,
+        "recall": 0.8,
+        "fp_rate": 0.08333333333333333,
+        "fn_rate": 0.2,
+        "blocked_or_reviewed": 60
+      }
+    ],
+    "customer_support/pii": [
+      {
+        "mode": "permissive",
+        "tp": 24,
+        "fp": 2,
+        "fn": 0,
+        "tn": 88,
+        "precision": 0.9230769230769231,
+        "recall": 1.0,
+        "fp_rate": 0.022222222222222223,
+        "fn_rate": 0.0,
+        "blocked_or_reviewed": 60
+      },
+      {
+        "mode": "standard",
+        "tp": 24,
+        "fp": 2,
+        "fn": 0,
+        "tn": 88,
+        "precision": 0.9230769230769231,
+        "recall": 1.0,
+        "fp_rate": 0.022222222222222223,
+        "fn_rate": 0.0,
+        "blocked_or_reviewed": 60
+      },
+      {
+        "mode": "strict",
+        "tp": 24,
+        "fp": 2,
+        "fn": 0,
+        "tn": 88,
+        "precision": 0.9230769230769231,
+        "recall": 1.0,
+        "fp_rate": 0.022222222222222223,
+        "fn_rate": 0.0,
+        "blocked_or_reviewed": 60
+      }
+    ],
+    "decision_support/bias": [
+      {
+        "mode": "permissive",
+        "tp": 16,
+        "fp": 0,
+        "fn": 0,
+        "tn": 64,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "blocked_or_reviewed": 48
+      },
+      {
+        "mode": "standard",
+        "tp": 16,
+        "fp": 0,
+        "fn": 0,
+        "tn": 64,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "blocked_or_reviewed": 48
+      },
+      {
+        "mode": "strict",
+        "tp": 16,
+        "fp": 0,
+        "fn": 0,
+        "tn": 64,
+        "precision": 1.0,
+        "recall": 1.0,
+        "fp_rate": 0.0,
+        "fn_rate": 0.0,
+        "blocked_or_reviewed": 48
+      }
+    ]
+  }
+}

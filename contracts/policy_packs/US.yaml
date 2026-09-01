@@ -1,0 +1,21 @@
+# Policy Pack - United States (sectoral)
+jurisdiction: US
+name: United States (sectoral - FCRA / ECOA / state privacy)
+references:
+  - "ECOA / Regulation B - adverse action notice must state specific reasons"
+  - "FCRA - accuracy and dispute rights where consumer reports are used"
+  - "NIST AI RMF 1.0 - measure and manage functions"
+
+high_risk_use_cases: [decision_support]
+
+minimum_modes: {}
+
+high_risk_minimum_modes:
+  bias: standard
+  policy: strict     # an adverse decision must carry an explainable reason
+
+minimum_actions:
+  high: human_review
+
+force_review_labels: []
+retention_days: 365
