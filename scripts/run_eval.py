@@ -135,11 +135,13 @@ def main() -> int:
       "setting is best, but that the cost of each is measurable before a contract is signed.\n")
     for key, rows in sweeps.items():
         w(f"### {key}\n")
-        w("| Mode | TP | FP | FN | Precision | Recall | FP rate | Flagged for review or block |")
-        w("|---|---:|---:|---:|---:|---:|---:|---:|")
+        w("| Confidence threshold | TP | FP | FN | Precision | Recall | FP rate | "
+          "Flagged for review or block |")
+        w("|---:|---:|---:|---:|---:|---:|---:|---:|")
         for r in rows:
-            w(f"| {r['mode']} | {r['tp']} | {r['fp']} | {r['fn']} | {_fmt(r['precision'])} | "
-              f"{_fmt(r['recall'])} | {_fmt(r['fp_rate'], True)} | {r['blocked_or_reviewed']} |")
+            w(f"| {r['threshold']:.2f} | {r['tp']} | {r['fp']} | {r['fn']} | "
+              f"{_fmt(r['precision'])} | {_fmt(r['recall'])} | {_fmt(r['fp_rate'], True)} | "
+              f"{r['blocked_or_reviewed']} |")
         w("")
 
     w("## Priced defects\n")

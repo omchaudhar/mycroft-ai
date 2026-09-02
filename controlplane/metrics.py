@@ -136,21 +136,28 @@ def action_mix(pairs: list[tuple[Trace, Decision]]) -> dict[str, int]:
 
 def threshold_sweep(traces: list[Trace], detector: str, use_case: str,
                     jurisdiction: str = "IN",
-                    modes: tuple[str, ...] = ("permissive", "standard", "strict")) -> list[dict]:
-    """Re-run one detector at each sensitivity and record what it costs.
+                    thresholds: tuple[float, ...] = (0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95),
+                    ) -> list[dict]:
+    """Re-run one detector across a grid of confidence thresholds.
 
-    This is the table a governance owner actually needs: not "which threshold
-    is best" but "what do I buy and what do I pay at each one".
+    A grid rather than the three named modes, because the modes are coarse:
+    a trace usually carries several findings, and one high-confidence finding
+    masks whatever the others do. Sweeping the threshold itself is the only
+    way to see where a detector's errors actually move.
+
+    This is the table a governance owner needs -- not "which threshold is
+    best", but "what do I buy and what do I pay at each one".
     """
     subset = [t for t in traces if t.use_case == use_case]
+    fam = {"pii": "privacy", "hallucination": "hallucination", "bias": "bias",
+           "policy": "policy", "behaviour": "behaviour"}[detector]
     rows = []
-    for mode in modes:
-        pairs = run(subset, jurisdiction, overrides={"detectors": {detector: {"mode": mode}}})
-        fam = {"pii": "privacy", "hallucination": "hallucination", "bias": "bias",
-               "policy": "policy", "behaviour": "behaviour"}[detector]
+    for th in thresholds:
+        pairs = run(subset, jurisdiction,
+                    overrides={"detectors": {detector: {"mode": "strict", "threshold": th}}})
         c = counts_by_family(pairs, applicable_only=False)[fam]
         rows.append({
-            "mode": mode,
+            "threshold": th,
             "tp": c.tp, "fp": c.fp, "fn": c.fn, "tn": c.tn,
             "precision": c.precision, "recall": c.recall,
             "fp_rate": c.fp_rate, "fn_rate": c.fn_rate,

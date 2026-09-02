@@ -372,7 +372,7 @@ with tab_metrics:
         for key, rows in data["threshold_sweeps"].items():
             st.markdown(f"**{key}**")
             st.dataframe(pd.DataFrame([{
-                "Mode": r["mode"], "TP": r["tp"], "FP": r["fp"], "FN": r["fn"],
+                "Threshold": r["threshold"], "TP": r["tp"], "FP": r["fp"], "FN": r["fn"],
                 "Precision": None if r["precision"] is None else round(r["precision"], 3),
                 "Recall": None if r["recall"] is None else round(r["recall"], 3),
                 "Sent to review or blocked": r["blocked_or_reviewed"],

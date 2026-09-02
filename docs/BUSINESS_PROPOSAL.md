@@ -1,6 +1,6 @@
 # Mycroft.ai — Business Proposal
 
-**Team Mycroft.ai** · IIT Bombay · Accenture Innovation Challenge 2026, Round 2
+**Team Mycroft.ai** · IIT Bombay · Accenture Innovation Challenge 2026, Round 2  
 Submitted against **Track 1: ControlPlane.ai**
 
 ---

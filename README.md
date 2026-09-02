@@ -1,7 +1,7 @@
 # Mycroft.ai
 
-**A configurable Responsible AI control plane.**
-Team Mycroft.ai · IIT Bombay · Accenture Innovation Challenge 2026, Round 2
+**A configurable Responsible AI control plane.**  
+Team Mycroft.ai · IIT Bombay · Accenture Innovation Challenge 2026, Round 2  
 Submitted against **Track 1: ControlPlane.ai**
 
 *A note on names.* **Mycroft.ai** is the product. **ControlPlane.ai** is
@@ -149,6 +149,15 @@ docs/               proposal · deck · assumptions · methodology · demo · ch
 | [Methodology](docs/METHODOLOGY.md) | How each detector works and where it fails |
 | [Demo script](docs/DEMO_SCRIPT.md) | Live run-of-show, video plan, and the hard questions |
 | [Brief → evidence map](docs/JUDGE_CHECKLIST.md) | Every complexity in the brief, and where we address it |
+
+Ready-to-submit files live in [`dist/`](dist/) — the proposal as a PDF and as a
+17-slide deck, plus PDF renderings of the README, methodology and assumptions
+register. All of them regenerate from source:
+
+```bash
+python scripts/build_pdf.py
+node scripts/build_deck.js dist/Mycroft_AI_Business_Proposal_Deck.pptx
+```
 
 ---
 

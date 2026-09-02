@@ -34,10 +34,10 @@ Detector compute only, measured in-process; excludes network and serialisation. 
 
 | Lane | p50 | p95 | p99 | max |
 |---|---:|---:|---:|---:|
-| fast lane | 0.029 ms | 0.074 ms | 0.138 ms | 0.398 ms |
-| slow lane | 0.797 ms | 2.057 ms | 3.599 ms | 6.171 ms |
+| fast lane | 0.026 ms | 0.04 ms | 0.047 ms | 0.286 ms |
+| slow lane | 0.764 ms | 1.456 ms | 1.528 ms | 4.905 ms |
 
-Fast Lane p95 is 0.074 ms against a contract budget of 100 ms.
+Fast Lane p95 is 0.04 ms against a contract budget of 100 ms.
 
 ## The same traces under three policy packs
 
@@ -55,27 +55,39 @@ Each block re-runs one detector at each sensitivity. The point is not that one s
 
 ### customer_support/hallucination
 
-| Mode | TP | FP | FN | Precision | Recall | FP rate | Flagged for review or block |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| permissive | 24 | 2 | 6 | 0.923 | 0.800 | 2.4% | 60 |
-| standard | 24 | 2 | 6 | 0.923 | 0.800 | 2.4% | 60 |
-| strict | 24 | 7 | 6 | 0.774 | 0.800 | 8.3% | 60 |
+| Confidence threshold | TP | FP | FN | Precision | Recall | FP rate | Flagged for review or block |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0.35 | 24 | 7 | 6 | 0.774 | 0.800 | 8.3% | 60 |
+| 0.45 | 24 | 7 | 6 | 0.774 | 0.800 | 8.3% | 60 |
+| 0.55 | 24 | 7 | 6 | 0.774 | 0.800 | 8.3% | 60 |
+| 0.65 | 24 | 2 | 6 | 0.923 | 0.800 | 2.4% | 60 |
+| 0.75 | 24 | 2 | 6 | 0.923 | 0.800 | 2.4% | 60 |
+| 0.85 | 24 | 2 | 6 | 0.923 | 0.800 | 2.4% | 60 |
+| 0.95 | 8 | 2 | 22 | 0.800 | 0.267 | 2.4% | 44 |
 
 ### customer_support/pii
 
-| Mode | TP | FP | FN | Precision | Recall | FP rate | Flagged for review or block |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| permissive | 24 | 2 | 0 | 0.923 | 1.000 | 2.2% | 60 |
-| standard | 24 | 2 | 0 | 0.923 | 1.000 | 2.2% | 60 |
-| strict | 24 | 2 | 0 | 0.923 | 1.000 | 2.2% | 60 |
+| Confidence threshold | TP | FP | FN | Precision | Recall | FP rate | Flagged for review or block |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0.35 | 24 | 2 | 0 | 0.923 | 1.000 | 2.2% | 60 |
+| 0.45 | 24 | 2 | 0 | 0.923 | 1.000 | 2.2% | 60 |
+| 0.55 | 24 | 2 | 0 | 0.923 | 1.000 | 2.2% | 60 |
+| 0.65 | 24 | 2 | 0 | 0.923 | 1.000 | 2.2% | 60 |
+| 0.75 | 5 | 0 | 19 | 1.000 | 0.208 | 0.0% | 39 |
+| 0.85 | 5 | 0 | 19 | 1.000 | 0.208 | 0.0% | 39 |
+| 0.95 | 5 | 0 | 19 | 1.000 | 0.208 | 0.0% | 39 |
 
 ### decision_support/bias
 
-| Mode | TP | FP | FN | Precision | Recall | FP rate | Flagged for review or block |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| permissive | 16 | 0 | 0 | 1.000 | 1.000 | 0.0% | 48 |
-| standard | 16 | 0 | 0 | 1.000 | 1.000 | 0.0% | 48 |
-| strict | 16 | 0 | 0 | 1.000 | 1.000 | 0.0% | 48 |
+| Confidence threshold | TP | FP | FN | Precision | Recall | FP rate | Flagged for review or block |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0.35 | 16 | 0 | 0 | 1.000 | 1.000 | 0.0% | 48 |
+| 0.45 | 16 | 0 | 0 | 1.000 | 1.000 | 0.0% | 48 |
+| 0.55 | 16 | 0 | 0 | 1.000 | 1.000 | 0.0% | 48 |
+| 0.65 | 16 | 0 | 0 | 1.000 | 1.000 | 0.0% | 48 |
+| 0.75 | 15 | 0 | 1 | 1.000 | 0.938 | 0.0% | 47 |
+| 0.85 | 15 | 0 | 1 | 1.000 | 0.938 | 0.0% | 47 |
+| 0.95 | 14 | 0 | 2 | 1.000 | 0.875 | 0.0% | 46 |
 
 ## Priced defects
 
