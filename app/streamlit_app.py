@@ -1,4 +1,4 @@
-"""ControlPlane.ai -- working prototype.
+"""Mycroft.ai -- working prototype.
 
 Run:  streamlit run app/streamlit_app.py
 
@@ -30,7 +30,7 @@ from controlplane.slowlane.judge import get_judge  # noqa: E402
 from controlplane.trace import Action, Span, Trace  # noqa: E402
 from data.generate import load  # noqa: E402
 
-st.set_page_config(page_title="ControlPlane.ai", layout="wide")
+st.set_page_config(page_title="Mycroft.ai", layout="wide")
 
 ACTION_STYLE = {
     "allow": ("#1a7f37", "ALLOW"),
@@ -89,7 +89,7 @@ def show_findings(decision) -> None:
 
 
 # ======================================================================
-st.title("ControlPlane.ai")
+st.title("Mycroft.ai")
 st.caption(
     "A configurable Responsible AI control plane. Every number on this page is computed "
     "live from the simulated corpus in this repository -- none of it is real enterprise data."
@@ -98,7 +98,7 @@ st.caption(
 judge = get_judge()
 st.info(
     f"**Slow Lane judge: `{judge.name}`** -- {judge.describes_itself_as}. "
-    "Set `CONTROLPLANE_JUDGE=anthropic` with an API key to route semantic evaluation to "
+    "Set `MYCROFT_JUDGE=anthropic` with an API key to route semantic evaluation to "
     "a model from a different family than the generator.",
 )
 

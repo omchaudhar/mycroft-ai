@@ -1,4 +1,4 @@
-"""Core data model for ControlPlane.ai.
+"""Core data model for the Mycroft.ai control plane.
 
 A Trace is one AI interaction as an enterprise would capture it at the API
 input/output layer -- we never assume access to model internals, which mirrors

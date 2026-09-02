@@ -1,7 +1,14 @@
-# ControlPlane.ai
+# Mycroft.ai
 
 **A configurable Responsible AI control plane.**
-Team Mycroft AI · IIT Bombay · Accenture Innovation Challenge 2026, Round 2, Track 1
+Team Mycroft.ai · IIT Bombay · Accenture Innovation Challenge 2026, Round 2
+Submitted against **Track 1: ControlPlane.ai**
+
+*A note on names.* **Mycroft.ai** is the product. **ControlPlane.ai** is
+Accenture's name for the problem track, and appears here only when referring to
+the brief. The `controlplane/` package is named for the architecture — a
+control plane sitting between the enterprise's AI systems and its users — which
+is the term the solution itself uses.
 
 > **Nothing in this repository is real enterprise data.** Every trace is
 > simulated, every identifier is fabricated (with valid checksums, so the
@@ -39,7 +46,7 @@ streamlit run app/streamlit_app.py
 Enterprises run several AI systems at once — a customer-facing support
 assistant, an internal copilot, a decision-support tool in a regulated
 workflow — and each has a different risk signature, latency budget and
-regulatory obligation. ControlPlane.ai checks every interaction, routes deeper
+regulatory obligation. Mycroft.ai checks every interaction, routes deeper
 evaluation where the risk justifies the cost, and turns what it finds into a
 **closable defect**: priced, evidence-pinned, resolved by a human, carried into
 a versioned contract, and proved by a regression run that also reports what
@@ -149,7 +156,7 @@ docs/               proposal · deck · assumptions · methodology · demo · ch
 
 ```bash
 export ANTHROPIC_API_KEY=...
-export CONTROLPLANE_JUDGE=anthropic
+export MYCROFT_JUDGE=anthropic
 python scripts/run_eval.py
 ```
 

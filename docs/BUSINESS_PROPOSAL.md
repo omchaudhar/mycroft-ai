@@ -1,7 +1,7 @@
-# ControlPlane.ai — Business Proposal
+# Mycroft.ai — Business Proposal
 
-**Team Mycroft AI** · IIT Bombay · Accenture Innovation Challenge 2026, Round 2
-**Track 1: ControlPlane.ai**
+**Team Mycroft.ai** · IIT Bombay · Accenture Innovation Challenge 2026, Round 2
+Submitted against **Track 1: ControlPlane.ai**
 
 ---
 
@@ -15,7 +15,7 @@ regulatory obligation. A single Responsible AI checker applied uniformly
 across that portfolio will be too slow for the first, too noisy for the
 second, and too shallow for the third.
 
-**ControlPlane.ai is a configurable Responsible AI control plane.** It checks
+**Mycroft.ai is a configurable Responsible AI control plane.** It checks
 every AI interaction in real time, routes deeper evaluation where the risk
 justifies the cost, and — the part nobody else does — turns what it finds into
 a closable defect with a priced impact, a human-approved contract change, and

@@ -10,10 +10,10 @@ Target: 8 minutes of talking, 4 minutes of live demo, the rest for questions.
 
 ## 1 — Title
 
-**ControlPlane.ai**
+**Mycroft.ai**
 *A configurable Responsible AI control plane for the enterprise AI portfolio*
 
-On-slide: Team Mycroft AI · IIT Bombay · Track 1
+On-slide: Team Mycroft.ai · IIT Bombay · Track 1 (ControlPlane.ai)
 Say: "Enterprises don't have an AI system. They have a portfolio of them. That
 is the whole problem."
 

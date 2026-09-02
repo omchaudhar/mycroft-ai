@@ -135,7 +135,7 @@ policy, and 4.5% on hallucination against the hand-written holdout.
 **"Why doesn't the demo use a real LLM?"**
 So that every number is reproducible on your laptop with no key. The Anthropic
 judge adapter is in `controlplane/slowlane/judge.py`; set
-`CONTROLPLANE_JUDGE=anthropic` and it routes semantic evaluation to a model
+`MYCROFT_JUDGE=anthropic` and it routes semantic evaluation to a model
 from a different family than the generator. We never let a model mark its own
 homework.
 

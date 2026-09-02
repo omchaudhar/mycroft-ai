@@ -200,7 +200,7 @@ Two rules:
 
 `OfflineJudge` is retrieval similarity plus numeric agreement. It is described
 as that everywhere it appears, and never as an LLM judge. Set
-`CONTROLPLANE_JUDGE=anthropic` with a key to route semantic evaluation to
+`MYCROFT_JUDGE=anthropic` with a key to route semantic evaluation to
 Claude instead; the checkability filter and the fallback path are unchanged,
 so only the verdict source moves. If the API call fails the judge falls back
 to the offline path — it fails safe, never open.

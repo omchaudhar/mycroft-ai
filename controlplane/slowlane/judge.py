@@ -190,11 +190,11 @@ _JUDGE: Optional[OfflineJudge] = None
 
 
 def get_judge() -> OfflineJudge:
-    """Offline unless CONTROLPLANE_JUDGE=anthropic and a key is present."""
+    """Offline unless MYCROFT_JUDGE=anthropic and a key is present."""
     global _JUDGE
     if _JUDGE is not None:
         return _JUDGE
-    if os.getenv("CONTROLPLANE_JUDGE") == "anthropic" and os.getenv("ANTHROPIC_API_KEY"):
+    if os.getenv("MYCROFT_JUDGE") == "anthropic" and os.getenv("ANTHROPIC_API_KEY"):
         try:
             _JUDGE = AnthropicJudge()
             return _JUDGE
