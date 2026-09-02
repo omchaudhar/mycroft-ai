@@ -7,3 +7,4 @@
 - [DEMO_SCRIPT.md](DEMO_SCRIPT.md) — live run-of-show and video plan
 - [JUDGE_CHECKLIST.md](JUDGE_CHECKLIST.md) — brief requirement → repo evidence
 - [VIDEO_BRIEF.md](VIDEO_BRIEF.md) — recording instructions and narration for the prototype video
+- [DEMO_FULL_SCRIPT.md](DEMO_FULL_SCRIPT.md) — the demo narration, word for word and timed

@@ -171,5 +171,6 @@ if __name__ == "__main__":
             ("docs/METHODOLOGY.md", "dist/Mycroft_AI_Methodology.pdf"),
             ("docs/ASSUMPTIONS.md", "dist/Mycroft_AI_Assumptions.pdf"),
             ("docs/VIDEO_BRIEF.md", "dist/Mycroft_AI_Video_Brief.pdf"),
+            ("docs/DEMO_FULL_SCRIPT.md", "dist/Mycroft_AI_Demo_Script.pdf"),
         ):
             build(ROOT / s, ROOT / o)
