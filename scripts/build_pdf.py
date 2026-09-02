@@ -152,8 +152,13 @@ def build(src: Path, out: Path) -> None:
         if not out.exists() or not out.stat().st_size:
             raise SystemExit(f"Chrome produced no PDF for {src}")
 
-    print(f"{src.relative_to(ROOT)}  ->  {out.relative_to(ROOT)}  "
-          f"({out.stat().st_size // 1024} KB)")
+    def rel(path: Path) -> str:
+        try:
+            return str(path.resolve().relative_to(ROOT))
+        except ValueError:
+            return str(path)
+
+    print(f"{rel(src)}  ->  {rel(out)}  ({out.stat().st_size // 1024} KB)")
 
 
 if __name__ == "__main__":
@@ -165,5 +170,6 @@ if __name__ == "__main__":
             ("README.md", "dist/Mycroft_AI_README.pdf"),
             ("docs/METHODOLOGY.md", "dist/Mycroft_AI_Methodology.pdf"),
             ("docs/ASSUMPTIONS.md", "dist/Mycroft_AI_Assumptions.pdf"),
+            ("docs/VIDEO_BRIEF.md", "dist/Mycroft_AI_Video_Brief.pdf"),
         ):
             build(ROOT / s, ROOT / o)

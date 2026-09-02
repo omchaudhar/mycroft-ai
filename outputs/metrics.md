@@ -34,10 +34,10 @@ Detector compute only, measured in-process; excludes network and serialisation. 
 
 | Lane | p50 | p95 | p99 | max |
 |---|---:|---:|---:|---:|
-| fast lane | 0.026 ms | 0.04 ms | 0.047 ms | 0.286 ms |
-| slow lane | 0.764 ms | 1.456 ms | 1.528 ms | 4.905 ms |
+| fast lane | 0.027 ms | 0.042 ms | 0.063 ms | 0.484 ms |
+| slow lane | 0.782 ms | 1.526 ms | 1.893 ms | 4.642 ms |
 
-Fast Lane p95 is 0.04 ms against a contract budget of 100 ms.
+Fast Lane p95 is 0.042 ms against a contract budget of 100 ms.
 
 ## The same traces under three policy packs
 

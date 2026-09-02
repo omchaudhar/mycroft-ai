@@ -149,6 +149,7 @@ docs/               proposal · deck · assumptions · methodology · demo · ch
 | [Methodology](docs/METHODOLOGY.md) | How each detector works and where it fails |
 | [Demo script](docs/DEMO_SCRIPT.md) | Live run-of-show, video plan, and the hard questions |
 | [Brief → evidence map](docs/JUDGE_CHECKLIST.md) | Every complexity in the brief, and where we address it |
+| [Video brief](docs/VIDEO_BRIEF.md) | Standalone recording instructions and narration, for someone with no context |
 
 Ready-to-submit files live in [`dist/`](dist/) — the proposal as a PDF and as a
 17-slide deck, plus PDF renderings of the README, methodology and assumptions

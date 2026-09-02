@@ -6,3 +6,4 @@
 - [METHODOLOGY.md](METHODOLOGY.md) — how the detectors work and where they fail
 - [DEMO_SCRIPT.md](DEMO_SCRIPT.md) — live run-of-show and video plan
 - [JUDGE_CHECKLIST.md](JUDGE_CHECKLIST.md) — brief requirement → repo evidence
+- [VIDEO_BRIEF.md](VIDEO_BRIEF.md) — recording instructions and narration for the prototype video
